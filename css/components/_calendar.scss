@@ -1,0 +1,202 @@
+
+.calendario {
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+
+    .header {
+        justify-content: space-between;
+        padding: 16px 24px 8px 32px;
+        align-items: center;
+        flex-shrink: 0;
+        display: flex;
+
+        .mes-ano {
+            text-transform: capitalize;
+            font: 300 24px "Gotham";
+            color: $dark-grey-color;
+            display: inline-block;
+            line-height: 32px;
+
+            b {
+                font-weight: 500;
+            }
+        }
+
+        .navegacao {
+            .anterior {
+                margin-right: 8px;
+            }
+            
+            .proximo {
+                margin-left: 8px;
+            }
+        }
+    }
+
+    .dias-semana {    
+        flex-shrink: 0;
+        width: 100%;
+
+        span {
+            text-transform: capitalize;
+            color: $dark-grey-color;
+            font: 500 11px "Gotham";
+            width: percentage(1/7);
+            display: inline-block;
+            text-align: center;
+            line-height: 24px;
+            flex: 1;
+        }
+    }
+
+    .dias {
+        border-bottom: 1px solid $line-grey-color;
+        border-left: 1px solid $line-grey-color;
+        flex: 1;
+
+        .dia {
+            border-right:  1px solid $line-grey-color;
+            border-top: 1px solid $line-grey-color;
+            height: percentage(1/5);
+            width: percentage(1/7);
+            display: inline-block;
+            vertical-align: top;
+            transition: 300ms;
+            min-height: 64px;
+            cursor: pointer;
+            padding: 8px;
+
+            .numero {
+                font: 300 13px "Gotham Book";
+                color: $dark-grey-color;
+                margin-bottom: 4px;
+                line-height: 21px;
+                text-align: right;
+            }
+
+            &--indisponivel {
+                background-color: $background-grey-color;
+                cursor: default;
+            }
+            
+            &--outro-mes {
+                & > * {
+                    opacity: 0.4;
+                }
+            }
+
+            &--selecionado {
+                border: 1px solid $secondary-color;
+                border-radius: 4px;
+
+                @include elevation-selected;
+            }
+        }
+
+        &--42 {
+            .dia {
+                height: percentage(1/6);
+            }
+        }
+    }
+
+    .alocacoes {
+        .alocacao {
+            border-radius: 4px;
+            margin-bottom: 4px;
+            transition: 300ms;
+            cursor: default;
+            display: block;
+            height: 12px;
+            width: 100%;
+
+            span {
+                border-radius: 4px;
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+
+            &--rachurada span {
+                background: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255, 255, 255, .5) 7px, rgba(255, 255, 255, .5) 8px);
+            }
+        }
+    }
+
+    &--em-edicao {
+        .dia {
+            cursor: default;
+        }
+
+        .alocacoes {
+            .alocacao {
+                cursor: pointer;
+                
+                &--selecionada {
+                    border: 1px solid $secondary-color;
+                    padding: 2px;
+                    
+                    span {
+                        border-radius: 2px;
+                    }
+
+                    @include elevation-selected;
+                }
+            }
+        }
+    }
+
+    &--mini {
+        .header {
+            margin-bottom: 8px;
+            padding: 0;
+            
+            .mes-ano
+            {
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+
+        .dias {
+            border: none;
+
+            .dia {
+                min-height: 48px;
+                height: 48px;
+                
+                .numero {
+                    text-align: center;
+                    font-weight: bold;
+                    line-height: 11px;
+                    font-size: 11px;
+
+                    .indicador-numero {
+                        margin: -8px 0;
+                    }
+                }
+
+                &:not(.dia--selecionado) {
+                    border: 1px solid transparent;
+                }
+            }            
+        }
+
+        .alocacoes {
+            text-align: center;
+
+            .alocacao {
+                display: inline-block;
+                border-radius: 8px;
+                margin: 0 2px;
+                height: 8px;
+                width: 8px;            
+                
+                span {
+                    border-radius: 8px;
+                }
+            }
+        }
+    }
+}    

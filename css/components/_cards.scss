@@ -1,0 +1,66 @@
+.card {
+    border-top: 3px solid #fff;
+    padding: 32px 16px;
+    display: block;
+    width: 100%;
+
+    @include elevation;
+
+    .header {
+        margin-bottom: 24px;
+
+        h3,
+        .subtitulo {
+            margin-bottom: 2px;
+        }
+    }
+}
+
+.card-agenda  {
+    border-radius: 2px;
+    border: 1px solid;
+    transition: 300ms;
+    border-left: 12px solid;
+
+    .aba {
+        justify-content: space-between; 
+        align-items: center;
+        padding-left: 16px;
+        display: flex;
+        height: 56px;
+
+        &--informacoes {
+            .maleta {
+                margin-right: 12px;
+            }
+    
+            .dados {
+                padding-right: 16px;
+                width: 45%;
+                flex: 1;
+                
+                label,
+                p {
+                    display: block;
+    
+                    @include truncate;
+                }
+    
+                label {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        &--confirmacao {
+            p {
+                display: inline-block;
+                font-size: 11px;
+            }
+
+            button:first-child {
+                margin-right: -16px;
+            }
+        }
+    }
+}

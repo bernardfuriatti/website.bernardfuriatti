@@ -1,0 +1,11 @@
+.agenda {
+    @include panel-view;
+    
+    app-painel-frentes {
+        @include panel-left;
+    }
+
+    app-calendario {
+        @include panel-right;
+    }
+}

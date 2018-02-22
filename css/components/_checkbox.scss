@@ -1,0 +1,21 @@
+.mat-checkbox {
+    .mat-checkbox-inner-container {
+        width: 16px;
+        height: 16px;
+    }
+
+    .mat-checkbox-frame {
+        border-color: $grey-color;
+        border-width: 1px;
+    }
+
+    .mat-checkbox-label {
+        font: 500 12px 'Gotham Book';
+        line-height: 16px;
+    }
+
+    .mat-checkbox-ripple {
+        left: -17px;
+        top: -17px;
+    }
+}

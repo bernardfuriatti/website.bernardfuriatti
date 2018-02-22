@@ -1,0 +1,100 @@
+.mat-button.btn {
+    border: 1px solid $primary-color;
+    font: 500 12px "Gotham Book";
+    touch-action: manipulation;
+    background-color: #fff;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $primary-color;
+    display: inline-block;
+    border-radius: 24px;
+    white-space: nowrap;
+    text-align: center;
+    user-select: none;
+    margin-bottom: 0;
+    cursor: pointer;
+    padding: 0 15px;
+    height: 24px;
+
+    .mat-button-wrapper {
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 20px;
+        padding-bottom: 2px;
+    }
+
+    .mat-button-ripple {
+        border-radius: 25px;
+    }
+
+    .mat-button-focus-overlay {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 25px;
+    }
+
+    app-icon {
+        @include icon-color($primary-color);
+        margin-right: 8px;
+    }
+
+    &--icon-right {
+        app-icon {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+    }
+
+    &--primary {
+        background-color: $primary-color;
+        color: #fff;
+
+        app-icon {
+            @include icon-color(#fff);
+        }
+    }
+
+    &[disabled] {
+        border-color: $grey-color;
+        color: $grey-color;
+
+        app-icon {
+            @include icon-color($grey-color);
+        }
+
+        .mat-button-focus-overlay {
+            background-color: transparent;
+        }
+    }
+
+    &--primary[disabled] {
+        background-color: $grey-color;
+        color: #fff;
+
+        app-icon {
+            @include icon-color(#fff);
+        }
+    }
+}
+
+.mat-icon-button[disabled][disabled] {
+    app-icon {
+        @include icon-color($grey-color);
+    }
+}
+
+.btn--expandir {
+    background-color: #fff;
+    border-radius: 20px;
+    @include elevation;
+    
+    app-icon {
+        vertical-align: top;
+        transition: 600ms;
+    }
+}
+
+[class$='--expandida'] .btn--expandir {
+    app-icon {
+        transform: rotate(180deg);
+    }
+}

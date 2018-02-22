@@ -1,0 +1,81 @@
+.logo-falconi {
+    @include icon(110px); 
+}
+
+.icon {
+    @include icon(16px, 16px);
+
+    &--white {
+        @include icon-color(#FFF);
+    }
+
+    &--grey {
+        @include icon-color($grey-color);
+    }
+
+    &--red {
+        @include icon-color($red-color);
+    }
+
+    &--green {
+        @include icon-color($green-color);
+    }
+
+    &--secondary {
+        @include icon-color($secondary-color);
+    }
+
+    &--bigger {
+        @include icon(24px, 24px);
+    }
+
+    &--medium {
+        @include icon(18px, 18px);
+    }
+
+    &--add {
+        @include icon(12px, 12px); 
+    
+        &.icon--bigger {
+            @include icon(16px, 16px); 
+        }
+    }
+
+    &--arrow-left {
+        &.icon--bigger {
+            @include icon(20px, 20px); 
+        }
+    }
+    
+    &--more {
+        @include icon(5px, 14.02px); 
+    }
+    
+    &--unavailable-agenda {
+        @include icon(200px, 141.69px);
+    }
+
+    &--ops {
+        @include icon(80px, 70.22px);
+    }
+    
+    &--x {
+        @include icon(12px, 12px); 
+    
+        &.icon--bigger {
+            @include icon(16px, 16px); 
+        }
+    
+        &.icon--smaller {
+            @include icon(9px, 9px); 
+        }
+    }
+    
+    &--wallet {
+        @include icon(15px, 13px); 
+    }
+    
+    &--x {
+        @include icon(12px); 
+    }
+}

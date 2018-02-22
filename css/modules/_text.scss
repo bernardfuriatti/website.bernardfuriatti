@@ -1,0 +1,116 @@
+h1,
+.h1 {
+    margin: 0 0 10px; 
+    font-weight: 500;
+    font-size: 20px;
+    
+}
+
+h2,
+.h2 { 
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0; 
+}
+
+h3,
+.h3 { 
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0; 
+}
+
+h4,
+.h4 { 
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0; 
+}
+
+.h1,
+.h2,
+.h3,
+.h4 {
+    font-family: "Gotham";
+}
+
+p {
+    font: 500 13px 'Gotham Book';
+    margin: 0;
+    
+    &.subtitulo {
+        font-family: "Gotham Rounded";
+        color: $grey-color;
+        font-size: 9px;
+    }
+}
+
+label {
+    font: 500 14px "Gotham";
+}
+
+a,
+a:active:focus,
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+}
+
+a.link {
+    font: bold 12px 'Gotham Book';
+    vertical-align: middle;
+    display: inline-block;
+    text-decoration: none;
+    color: $secondary-color;
+    cursor: pointer;
+
+    span {
+        vertical-align: middle;
+    }
+
+    .indicador-numero {
+        margin-left: 5px;
+    }
+}
+
+.atencao {
+    color: $red-color;
+}
+
+.ok {
+    color: $green-color;
+}
+
+.info {
+    line-height: 24px;
+    height: 24px;
+    
+    label:not(.mat-form-field-label) {
+        display: inline-block;
+        margin-right: 8px;
+    }
+    
+    span {
+        font: 500 13px 'Gotham Book';
+        display: inline-block;
+    }
+
+    &--menor {
+        label:not(.mat-form-field-label) {
+            font-size: 12px;
+        }
+        
+        span {
+            font-size: 11px;
+        }
+    }
+}
+
+.color {
+    &--secondary {
+        color: $secondary-color;
+    }
+}

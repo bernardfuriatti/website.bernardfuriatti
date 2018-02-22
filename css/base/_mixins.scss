@@ -1,0 +1,122 @@
+@mixin small-screen {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin medium-screen {
+    @media (min-width: 768px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin large-screen {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin container-padding {
+    padding: 0 40px;
+
+    @include medium-screen {
+        padding: 0 5%;
+    }
+
+    @include small-screen {
+        padding: 0 5%;
+    }
+}
+
+@mixin icon($width: 15px, $height: auto, $margin: 0) {
+    margin: $margin;
+    height: $height;
+    width: $width;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 0;
+}
+
+@mixin icon-color($fill-color: #000) {
+    svg path {
+        fill: $fill-color;
+    }
+}
+
+@mixin pseudo-icon($url, $height: 15px, $width: 15px, $margin: 0 0 0 15px, $vertical-align: text-bottom) {
+    background: url($url) no-repeat;
+    vertical-align: $vertical-align;
+    margin: $margin;
+    height: $height;
+    width: $width;
+    background-size: 100% 100%;
+    display: inline-block;
+    content: "";
+}
+
+@mixin elevation ($x-offset: 0px, $y-offset: 2px, $blur: 8px, $spread: 1px, $color: rgba(0, 0, 0, .1)) {
+    box-shadow: $x-offset $y-offset $blur $spread $color;
+}
+
+@mixin elevation-selected {
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, .2),
+                0 3px 4px 0 rgba(0, 0, 0, .14),
+                0 1px 8px 0 rgba(0, 0, 0, .12);
+}
+
+@mixin full-screen {
+    height: calc(100% - 48px);
+}
+
+@mixin panel-view {
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+} 
+
+@mixin panel-left {
+    overflow-y: auto;
+    height: 100%;
+    flex: 1;
+    
+    @include elevation(1px, 0px, 15px);
+}
+
+@mixin panel-right {
+    margin-left: -1px;
+    overflow-y: auto;
+    height: 100%;
+    flex: 3;
+}
+
+@mixin truncate {
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin scrollbar {
+    ::-webkit-scrollbar {
+        width: 6px;
+        margin-left: -6px;
+        background: rgba(0, 0, 0, .05);
+    }
+
+    ::-webkit-scrollbar:horizontal {
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 6px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: rgba(0, 0, 0, .15);
+    }
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(0, 0, 0, .1);
+    }
+}

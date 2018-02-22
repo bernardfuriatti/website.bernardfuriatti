@@ -1,0 +1,28 @@
+.mat-dialog-container {
+    color: $black-font-color;
+    position: relative;
+
+    .h2 {
+        margin-bottom: 16px;
+        line-height: 11px;
+    }
+
+    .close-button {
+        position: absolute;
+        z-index: 1000;
+        right: 8px;
+        top: 8px;
+
+        @include icon-color($black-font-color);
+    }
+}
+
+.full-dialog {
+    max-width: 100vw !important;
+    height: 100vh;
+    width: 100vw;
+
+    .mat-dialog-container {
+        padding: 0;
+    }
+}

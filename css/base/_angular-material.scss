@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$falconi-primary: ( 50: #EBF4F9, 100: #CDE3F1, 200: #ACD0E8, 300: #8BBDDE, 400: #72AFD7, 500: #59A1D0, 600: #5199CB, 700: #488FC4, 800: #3E85BE, 900: #2E74B3, A100: #F6FBFF, A200: #C3E2FF, A400: #90C9FF, A700: #77BCFF, contrast: ( 50: $black-font-color, 100: $black-font-color, 200: $black-font-color, 300: $black-font-color, 400: $grey-color, 500: $grey-color, 600: $grey-color, 700: $grey-color, 800: $grey-color, 900: $grey-color, A100: $black-font-color, A200: $black-font-color, A400: $grey-color, A700: $grey-color, ));
+$falconi-primary-palette: mat-palette($falconi-primary);
+$falconi-app-theme: mat-light-theme($falconi-primary-palette, $falconi-primary-palette);
+@include angular-material-theme($falconi-app-theme);
+
+$falconi-typography-config: mat-typography-config('"Gotham Rounded", "Helvetica Neue", sans-serif');
+@include angular-material-typography($falconi-typography-config);

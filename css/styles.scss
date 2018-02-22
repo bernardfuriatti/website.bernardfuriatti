@@ -1,0 +1,43 @@
+@import 'base/_base';
+@import 'modules/_modules';
+@import 'components/_components';
+
+html,
+body {
+    font-family: 'Gotham Rounded';
+    color: $black-font-color;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+* {
+    @include scrollbar;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid $line-grey-color;
+    margin: 16px 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+
+    @include container-padding;
+}

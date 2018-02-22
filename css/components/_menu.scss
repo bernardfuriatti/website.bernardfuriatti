@@ -1,0 +1,16 @@
+button.mat-menu-item {
+    font: 500 12px "Gotham Book" !important;
+    white-space: normal;
+    padding: 8px 16px;
+    overflow: unset;
+    height: auto !important;
+
+    span {
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+}
+
+.mat-menu-content {
+    padding: 0 !important;
+}

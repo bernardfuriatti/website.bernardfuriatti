@@ -1,0 +1,45 @@
+.mat-tab-group {
+    &--label-25 {
+        .mat-tab-header-pagination {
+            display: none;
+        }
+
+        .mat-tab-label {
+            min-width: 0%;
+            width: 25%;
+        }
+    }
+
+    .mat-tab-label {
+        font: 100 10px "Gotham Book";
+        padding: 12px 8px 12px;
+        flex-direction: column;
+        color: $light-primary-color;
+        height: auto;
+        opacity: 1;
+
+        .icon {
+            margin-bottom: 6px;
+            
+            @include icon-color($light-primary-color);
+        }
+
+        &-active {
+            color: $primary-color;
+
+            .icon {
+                @include icon-color($primary-color);
+            }
+        }
+    }
+
+    .mat-tab-body-content {
+        overflow: hidden;
+    }
+
+    &--no-navigation {
+        .mat-tab-header {
+            display: none;
+        }
+    }
+}

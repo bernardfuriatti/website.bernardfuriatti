@@ -36,11 +36,10 @@
 
         }
         .header{
-            display: inline-block;
-    
-            width: 100%;  
-
+            display: flex;
+            width: 100%;
             padding: 56px 56px 56px 56px;
+            justify-content: space-between;
             
             
         }
@@ -55,11 +54,36 @@
         .navBar{
             display: inline-block;
         }
-
+        
+        .navBar ul{
+            display: flex;
+            align-content: center;
+            padding-top: 16px;
+        }
         .navBar__element{
-            padding: 0 32px 0 32px;
+            margin: 0 32px 0 32px;
 
-            font-family: 'Proxima Nova';
+
+                    
+            font-family: 'proxima_nova_ltthin';
+            font-size: 1.0em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            word-spacing: -4px;
+            color: rgba(255, 255, 255, 1.0);
+
+            transition: word-spacing 0.7s;
+        }
+
+        .navBar__element:hover{
+            word-spacing: 0px;
+            color: rgba(255, 255, 255, 1.0);
+            transform: 
+        }
+        .navBar__element strong{
+            color: rgba(255, 255, 255, 0.72);        
+            font-family: 'proxima_nova_ltsemibold';
+            font-size: 1.0em;
             text-transform: uppercase;
             color: white;
         }
@@ -68,7 +92,7 @@
             display: inline-block;
         }
         .socialMediaBar--element{
-            padding: 0 40px 0 40px;
+            padding: 0 20px 0 20px;
         }
 
         .icon{
@@ -80,6 +104,40 @@
             height: 36px;
         }
 
+        .titleMain{
+            position: relative;
+            top: 24vh;
+        }
+
+        .titleMain--space{
+            display: inline-block;
+            width: 45vw;         
+            height: 300px;
+        }
+
+        .titleMain--call{
+            display: inline-block;
+            width: 50vw;
+            height: 300px;
+
+        }
+
+        .titleMain--title{
+            color: white;
+            font-family: 'proxima_nova_ltthin';
+            font-size: 3em;
+        }
+
+        .titleMain--title strong{
+            font-family: 'proxima_nova_ltsemibold';
+        }
+
+        .titleMain--text{
+            color: rgba(255, 255, 255, 0.72);        
+            font-family: 'proxima_nova_ltthin';
+            font-size: 1.5em;
+
+        }
       
     </style>
 </head>
@@ -92,10 +150,10 @@
             <img class="logo" src="images/logo--white.svg" alt="Logo - Bernard Furiatti">
             <nav class="navBar">
                 <ul>
-                    <li class="navBar__element">What <strong>I've</strong> Done</li>
-                    <li class="navBar__element">Who <strong>I'm</strong></li>
-                    <li class="navBar__element">Talk <strong>with</strong> me</li>
-                    <li class="navBar__element">Give <strong>me</strong> feedback</li>
+                    <li class="navBar__element">What <strong> I've </strong> Done</li>
+                    <li class="navBar__element">Who <strong> I'm </strong></li>
+                    <li class="navBar__element">Talk <strong> with </strong> me</li>
+                    <li class="navBar__element">Give <strong> me </strong> feedback</li>
                 </ul>
             </nav>
             <div class="socialMediaBar">
@@ -113,8 +171,16 @@
             </div>
         </header>
 
-        <div >
-            
+        <div class="titleMain">
+            <div class="titleMain--space"></div>
+            <div class="titleMain--call">
+                <h1 class="titleMain--title">I'm Bernard<strong>Furiatti,</strong></h1>
+                <p class="titleMain--text">Front-end Developer <br>and Interaction Designer.</p>
+            </div>
+        </div>
+        <div>
+            <span>Know More</span>
+
         </div>
 
     </section>

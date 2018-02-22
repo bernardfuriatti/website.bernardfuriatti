@@ -1,0 +1,222 @@
+.table {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  .table-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .header,
+  .header>div,
+  .row,
+  .row>div {
+    align-self: center;
+    display: flex;
+  }
+
+  .header,
+  .row {
+      padding: 0 20px;
+  }
+
+  .header {
+    font: bold 14px "Gotham Book";
+    color: $dark-grey-color;
+    height: 48px;
+
+    .mat-select {
+      .mat-select-placeholder {
+        font: bold 14px "Gotham Book";
+        color: inherit;
+      }
+
+      .mat-select-value {
+        font: bold 14px "Gotham Book";
+        width: auto;
+      }
+    
+      .mat-select-arrow-wrapper {
+        display: inline-block;
+      }
+    }
+  }
+
+  .row {
+    border-bottom: 1px solid $line-grey-color;
+    font-size: 11px;
+    height: 64px;
+
+    .mat-form-field .mat-select-value-text,
+    .mat-form-field .mat-input-element {
+      font: 500 11px "Gotham Rounded";
+    }
+    .mat-form-field-label {
+      top: 1.08125em;
+    }
+    
+    .mat-form-field.mat-form-field-invalid .mat-select-value-text,
+    .mat-form-field.mat-form-field-invalid .mat-input-element {
+      color: $red-color;
+    }
+   
+    .mat-input-element:disabled {
+        color: $dark-grey-color;
+    }
+
+    &--empty {
+      margin-bottom: -6px;
+      height: 128px;
+    }
+  }
+
+  .column {
+    padding-right: 20px;
+    
+    @for $i from 1 through 5 {
+      &.column--flex-#{$i} {
+          flex: $i;
+      }
+    }
+    
+    &--centered {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &--light-secondary {
+    background-color: $light-secondary-color;
+  }
+
+  &--alocacoes {
+    transform: translateX(-33.333333%);
+    width: 150%;
+    z-index: 1;
+    flex: 1;
+
+    .header,
+    .row {
+        padding: 0 20px 0 40px;
+    }
+    
+    .equipe {
+      width: percentage(3/6);
+      position: relative;
+      float: right;
+      height: 100%;
+
+      .btn--expandir {
+        position: absolute;
+        right: -20px;
+        z-index: 1;
+        top: 10px;
+      }
+    }
+
+    .alocacao-hds {
+      transition: width 600ms;
+      width: percentage(1/6);
+      overflow-y: hidden;
+      position: relative;
+      min-height: 100%;
+      overflow-x: auto;
+      float: right;
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+
+    .column {
+      &--situacao {
+        flex-basis: 110px;
+      }
+  
+      &--editar,
+      &--hd {
+        width: 50px;
+      }
+  
+      &--hd,
+      &--mes {
+        mat-form-field.mat-form-field input {
+          text-align: center;
+        }
+      }
+  
+      &--situacao {
+        flex-basis: 110px;
+      }
+  
+      &--ano,
+      &--prev-conf {
+        width: 64px;
+      }
+  
+      &--mes {
+        position: relative;
+        width: 40px;
+
+        button {
+          position: absolute;
+          left: -10px;
+          top: -28px;
+        }
+      }
+
+      &--editar {
+        margin-left: -20px;
+      }
+  
+      &--funcionario {
+        align-items: center;
+  
+        p {
+          margin: 0;
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+  
+        .visualizacao-custo {
+          margin-right: 8px;
+        }
+
+        button {
+          margin-top: -4px;
+        }
+      }
+    }
+
+    app-loading {
+      .loading {
+        left: unset;
+        width: 67%;
+      }
+    }
+
+    &--expandida {
+      .alocacao-hds {
+        width: 48%;
+      }
+    }
+  }
+
+  &--thinner {
+    .header {
+      font-size: 13px;
+      height: 32px;
+    }
+
+    .row {
+      height: 56px;
+      border: none;
+    }
+  }
+}
+

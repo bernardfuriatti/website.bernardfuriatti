@@ -1,0 +1,111 @@
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+.no-underline {
+  mat-form-field.mat-form-field {    
+    .mat-input-underline {
+      background-color: transparent;
+    }
+
+    .mat-form-field-wrapper {
+        margin-bottom:  -1.25em;;
+    }
+
+    .mat-form-field-infix {
+      border: none;
+    }
+
+    textarea.mat-input-element {
+      overflow: hidden;
+    }
+
+    &.mat-form-field-disabled .mat-form-field-underline {
+      display: none;
+    }
+  }
+}
+
+.mat-form-field {
+    .mat-select-value-text,
+    .mat-input-element {
+        font: 500 13px "Gotham Book";
+        line-height: 15px;
+
+        &:disabled {
+            color: $dark-grey-color;
+        }
+    }
+
+    .h1.mat-select-value-text,
+    .h1.mat-input-element {
+        font: 500 20px "Gotham Rounded";
+        line-height: 20px;
+    }
+
+    .mat-select-value {
+        height: 15px;
+    }
+
+    .mat-form-field-underline {
+        background-color: $grey-color;
+    }
+    
+    .mat-form-field-label {
+        font: bold 13px "Gotham Book";
+        color: $black-font-color;
+    }
+
+    button {
+        position: absolute;
+        right: -8px;
+        top: -10px;
+    }
+
+    app-icon {
+        @include icon-color($black-font-color);
+    
+        &[matsuffix] {
+            margin-bottom: 4px;
+        }
+    }
+
+    .mat-input-prefix {
+        app-icon {
+            margin: -5px 8px 0 0;
+        }
+    }
+    
+    .mat-form-field-infix {
+        width: 100%;
+    }
+    
+    &.mat-focused
+    {
+        .mat-form-field-label {
+            color: $secondary-color;
+        }
+    }
+
+    &.mat-form-field-invalid {
+        color: $red-color;
+        
+        label.mat-form-field-label {
+            color: $red-color;
+        }
+        
+        .mat-form-field-ripple {
+            background-color: $red-color;
+        }
+        
+        app-icon {
+            @include icon-color($red-color)
+        }
+    }
+}
